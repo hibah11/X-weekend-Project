@@ -2,7 +2,6 @@ import searching from "../assets/search.svg";
 import homelogo from "../assets/homelogo.svg";
 import bell from "../assets/bell.svg";
 import message from "../assets/message.svg";
-// import list from "../assets/list.svg";
 import bookmark from "../assets/bookmark.svg";
 import more from "../assets/more.svg";
 import users from "../assets/users.svg";
@@ -16,7 +15,7 @@ import emoji from "../assets/emoji.svg";
 import gif from "../assets/gif.svg";
 import github from "../assets/github.svg";
 import linkedin from "../assets/linkedin.svg";
-import axios from "axios";
+import axios from "../../node_modules/axios/index";
 import { useState } from "react";
 
 type TitleInfo = {
@@ -59,7 +58,7 @@ function HomePage() {
           <p className="text-xl font-semibold">Messages</p>
         </div>
         <div className="flex flex-row items-center gap-5">
-          <img className="w-6 h-7"></img>
+          <img className="w-6 h-7" ></img>
           <p className="text-xl font-semibold">Lists</p>
         </div>
         <div className="flex flex-row items-center gap-5">
@@ -139,7 +138,7 @@ function HomePage() {
               </div>
             ))}
           </ul>
-          );
+
         </div>
         </div>
         <div className = 'flex flex-col px-10 pt-1 gap-10 items-center'>
