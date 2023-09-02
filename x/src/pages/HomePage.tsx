@@ -141,26 +141,23 @@ function HomePage() {
           </ul>
           );
         </div>
-      </div>
-      <div className="flex flex-col px-10 pt-1 gap-10 items-center">
-        <div className="bg-[#16181C] px-16 py-3 rounded-full flex flex-row gap-3">
-          <img className="w-5 h-5" src={searching}></img>
-          <input
-            className="bg-[#16181C] rounded-full"
-            placeholder="Search"
-          ></input>
         </div>
-        <div className="bg-[#16181C] px-24 py-3 rounded-lg flex flex-col gap-10 flex flex-col h-screen justify-center">
-          <div className="flex flex-row gap-5 items-center">
-            <img className="w-10 h-10" src={github}></img>
-            <p>GitHub</p>
-          </div>
-          <div className="flex flex-row gap-5 items-center">
-            <img className="w-10 h-10" src={linkedin}></img>
-            <p>LinkedIn</p>
-          </div>
+        <div className = 'flex flex-col px-10 pt-1 gap-10 items-center'>
+            <div className = 'bg-[#16181C] px-16 py-3 rounded-full flex flex-row gap-3'>
+            <img className = 'w-5 h-5' src = {searching} ></img>
+            <input className = 'bg-[#16181C] rounded-full' placeholder = 'Search'></input>
+            </div>
+<div className = 'bg-[#16181C] px-24 py-3 rounded-lg flex flex-col gap-10 flex flex-col h-screen justify-center'>
+<div className = 'flex flex-row gap-5 items-center'>
+    <img className = 'w-10 h-10' src = {github}></img>
+    <p>GitHub</p>
+</div>
+<div className = 'flex flex-row gap-5 items-center'>
+    <img className = 'w-10 h-10' src = {linkedin}></img>
+    <p>LinkedIn</p>
+</div>
+</div>
         </div>
-      </div>
     </div>
   );
 }
