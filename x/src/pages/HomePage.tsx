@@ -37,6 +37,19 @@ function HomePage() {
         setInputValue({ tweets: "" });
       });
   };
+
+  const deletePost = (id: string) => {
+    axios
+      .delete(`https://64ecf95bf9b2b70f2bfb3014.mockapi.io/posttweets/${id}`)
+      .then(() => {
+        setList(
+          list.filter((del) => {
+            return del.id !== id;
+          })
+        );
+      });
+  };
+
   return (
     <div className=" px-20 bg-black text-white flex flex-row divide-x  divide-slate-700">
       <div className="flex flex-col items-start  gap-6 h-screen  px-10">
@@ -58,7 +71,7 @@ function HomePage() {
           <p className="text-xl font-semibold">Messages</p>
         </div>
         <div className="flex flex-row items-center gap-5">
-          <img className="w-6 h-7" ></img>
+          <img className="w-6 h-7"></img>
           <p className="text-xl font-semibold">Lists</p>
         </div>
         <div className="flex flex-row items-center gap-5">
@@ -133,30 +146,35 @@ function HomePage() {
               <div key={id}>
                 <div>
                   <li>{item.tweets}</li>
-                  <button className=" text-rose-50">delete</button>
+
+                  <button type="button" onClick={() => deletePost(item.id)}>
+                    delete
+                  </button>
                 </div>
               </div>
             ))}
           </ul>
-
         </div>
+      </div>
+      <div className="flex flex-col px-10 pt-1 gap-10 items-center">
+        <div className="bg-[#16181C] px-16 py-3 rounded-full flex flex-row gap-3">
+          <img className="w-5 h-5" src={searching}></img>
+          <input
+            className="bg-[#16181C] rounded-full"
+            placeholder="Search"
+          ></input>
         </div>
-        <div className = 'flex flex-col px-10 pt-1 gap-10 items-center'>
-            <div className = 'bg-[#16181C] px-16 py-3 rounded-full flex flex-row gap-3'>
-            <img className = 'w-5 h-5' src = {searching} ></img>
-            <input className = 'bg-[#16181C] rounded-full' placeholder = 'Search'></input>
-            </div>
-<div className = 'bg-[#16181C] px-24 py-3 rounded-lg flex flex-col gap-10 flex flex-col h-screen justify-center'>
-<div className = 'flex flex-row gap-5 items-center'>
-    <img className = 'w-10 h-10' src = {github}></img>
-    <p>GitHub</p>
-</div>
-<div className = 'flex flex-row gap-5 items-center'>
-    <img className = 'w-10 h-10' src = {linkedin}></img>
-    <p>LinkedIn</p>
-</div>
-</div>
+        <div className="bg-[#16181C] px-24 py-3 rounded-lg flex flex-col gap-10 flex flex-col h-screen justify-center">
+          <div className="flex flex-row gap-5 items-center">
+            <img className="w-10 h-10" src={github}></img>
+            <p>GitHub</p>
+          </div>
+          <div className="flex flex-row gap-5 items-center">
+            <img className="w-10 h-10" src={linkedin}></img>
+            <p>LinkedIn</p>
+          </div>
         </div>
+      </div>
     </div>
   );
 }
